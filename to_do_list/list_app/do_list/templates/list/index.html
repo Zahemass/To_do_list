@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+
+
+
+
+    <a href = "{% url 'app_list:logout' %}"class = "move btn btn-success ">Logout</a>
+    <h1 class = "heading1 flex justify-content-center d-flex flex-column bd-highlight mb-3  d-flex align-items-center">Hey! {{user.get_username}}</h1>
+    <div class="wrapper">   
+        <div class = " container p-3 d-flex justify-content-center d-flex flex-column bd-highlight mb-3  d-flex align-items-center box ">
+            <h1 class = "heading">TO DO LIST</h1>
+            <h1 class = "heading2"id="demo"></h1>
+            
+            <br>
+        
+            <form  onsubmit = "myfunction()" action = "" method = "POST">
+                {% csrf_token %}
+            
+                    {% for info in all_info %}
+                    
+                        <li><input class = "form-check-input"  type="checkbox" name = "checked" value = "{{info.user_list}}">
+                        <label for = "{{info.user_list}}">{{info.user_list}}</label></li>
+                        <br>
+                    
+                    {% endfor %}
+            
+            
+                <div class="users input-group">
+                    <input class = "form-control" type = "text" id = "Title" for = {{user.get_username}} name = "add_list" placeholder="Add Your List 😊" autocomplete = "off" >
+                    <button class = "btn btn-outline-success" name = "Add" value = "Add" type="submit">Add</button>
+                    <button class = "btn btn-outline-danger" name = "delete"value = 'delete'type = "submit">Remove</button>
+                </div>
+                <br>
+                
+            </form>   
+            </div>   
+            
+    </div>
+    
+        
+            
+      
+
+
+    
+    
+    
+
+{% endblock %}

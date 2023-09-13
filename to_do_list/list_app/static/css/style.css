@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+    background-color: #131313;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading{
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+} 
+.heading1{
+    color: aliceblue;
+    
+    margin-top:5%;
+    
+    
+}
+.heading2{
+    color: orangered;
+    
+
+}  
+.container{
+    width: 50%;
+    color: rgb(17, 246, 55);
+    background-color: rgba(0,0,0,.4);
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+    margin-top: 2%;
+    font-size: 25px;
+    
+}
+.form-check-input{
+    background-color: #292626;
+}
+
+input[type=checkbox]:checked + label {
+    color:rgba(249, 46, 46, 0.661);
+    text-decoration: line-through;
+    transition: 500ms ease-in-out;
+}
+  input[type=checkbox] + label{
+    transition: 500ms ease-out;
+  }
+  
+  input[type=checkbox]:hover{
+    cursor: pointer;
+  }
+  input[type=checkbox] + label{
+    position: relative;
+    left: 5px;
+  }
+  input[type=checkbox]:checked{
+    
+    background-color: rgb(60, 185, 60);
+  }
+li{
+    list-style: none;
+}
+.input-group>.form-control{
+    background-color: transparent;
+    border:none ;
+    color: white;
+    border:1px solid #ff99cc;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+* {
+	box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+p {
+	margin: 0;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgb(24, 255, 43);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+.wrapper {
+	min-width: min(40rem, 100%);
+}
+
+.box {
+	
+	
+	border: 0.35rem solid;
+	padding: 3vw;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+
+
+
+
+
+.move{
+    margin-left: 90%;
+    margin-top: 3%;
+}
+@media only screen and (max-width: 768px) {
+    
+    .move{
+        margin-left: 80%;
+    }
+    .container{
+        font-size: 15px;
+    }
+    .users{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 10px;
+    }
+    .input-group>.form-control{
+        background-color: transparent;
+        border:none ;
+        color: white;
+        width: 100%;
+        border:1px solid #ff99cc;
+    }
+  }
+@media only screen and (max-width: 490px) {
+    .container{
+        width: 80%;
+        font-size: 16px;
+    }
+    .move{
+        margin-left: 75%;
+    }  
+    .heading1{
+        color: aliceblue;
+        
+        margin-top:25%;
+        
+        
+    }  
+    .users{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 10px;
+    }
+    .input-group>.form-control{
+        background-color: transparent;
+        border:none ;
+        color: white;
+        width: 100%;
+        border:1px solid #ff99cc;
+    }
+   
+    
+  }
+  @media only screen and (max-width: 340px) {
+    
+    .move{
+        margin-left: 70%;
+    }
+    .users{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 10px;
+    }
+    .input-group>.form-control{
+        background-color: transparent;
+        border:none ;
+        color: white;
+        width: 100%;
+        border:1px solid #ff99cc;
+    }
+    
+  }
